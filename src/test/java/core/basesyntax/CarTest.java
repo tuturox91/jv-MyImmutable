@@ -29,10 +29,10 @@ public class CarTest {
     @Test
     public void isEngineInCarChanged() {
         testEngine.setHorsePower(90);
-        testEngine.setMaker("new maker");
+        testEngine.setManufacturer("new maker");
         Engine engine = testCar.getEngine();
         Assert.assertNotEquals(testEngine.getHorsePower(), engine.getHorsePower());
-        Assert.assertNotEquals(testEngine.getMaker(), engine.getMaker());
+        Assert.assertNotEquals(testEngine.getManufacturer(), engine.getManufacturer());
     }
 
     @Test
@@ -190,7 +190,7 @@ public class CarTest {
         String expectedMaker = "maker";
         Engine engine = new Engine(expectedHorsePower, expectedMaker);
         Assert.assertEquals(expectedHorsePower, engine.getHorsePower());
-        Assert.assertEquals(expectedMaker, engine.getMaker());
+        Assert.assertEquals(expectedMaker, engine.getManufacturer());
     }
 
     @Test
