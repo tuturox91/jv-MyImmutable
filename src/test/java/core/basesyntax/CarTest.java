@@ -248,7 +248,7 @@ public class CarTest {
         Car car = new Car(1995, "Blue", List.of(new Wheel(90)), testEngine);
         car.getEngine().setHorsePower(0);
         Assert.assertEquals("You shouldn't be able to change car's engine with getEngine() method",
-            originalEngine, car.getEngine());
+                originalEngine, car.getEngine());
     }
 
     @Test
@@ -256,6 +256,6 @@ public class CarTest {
         Car car = new Car(1995, "Blue", List.of(new Wheel(90)), testEngine);
         car.getWheels().add(new Wheel(50));
         Assert.assertEquals("You shouldn't be able to change car's wheels with getWheel method",
-            1, car.getWheels().size());
+                1, car.getWheels().size());
     }
 }
