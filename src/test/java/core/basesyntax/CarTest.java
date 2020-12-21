@@ -91,7 +91,7 @@ public class CarTest {
         Car actualCar = testCar.addWheel(new Wheel(90));
         int actualSizeDelta = actualCar.getWheels().size() - testCar.getWheels().size();
         Assert.assertEquals("After calling method addWheel returned car wheels'"
-            + " size should be increased by 1", 1, actualSizeDelta);
+                + " size should be increased by 1", 1, actualSizeDelta);
         Assert.assertNotSame(testCar, actualCar);
     }
 
