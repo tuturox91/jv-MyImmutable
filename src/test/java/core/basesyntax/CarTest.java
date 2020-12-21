@@ -12,11 +12,13 @@ import org.junit.Test;
 public class CarTest {
     private Engine testEngine;
     private Car testCar;
+    private List<Wheel> testWheels;
 
     @Before
     public void setUp() {
+        testWheels = List.of(new Wheel(10), new Wheel(15), new Wheel(20));
         testEngine = new Engine(100, "Some maker");
-        testCar = new Car(1999, "red", Collections.emptyList(), testEngine);
+        testCar = new Car(1999, "red", testWheels, testEngine);
     }
 
     @Test
@@ -86,8 +88,11 @@ public class CarTest {
 
     @Test
     public void isCarTheSameAfterAddingWheel() {
-        Car actual = testCar.addWheel(new Wheel(90));
-        Assert.assertNotSame(testCar, actual);
+        Car actualCar = testCar.addWheel(new Wheel(90));
+        int actualSizeDelta = actualCar.getWheels().size() - testCar.getWheels().size();
+        Assert.assertEquals("After calling method addWheel returned car wheels'"
+            + " size should be increased by 1", 1, actualSizeDelta);
+        Assert.assertNotSame(testCar, actualCar);
     }
 
     @Test
