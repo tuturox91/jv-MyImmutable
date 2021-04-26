@@ -257,10 +257,20 @@ public class CarTest {
     }
 
     @Test
-    public void checkCloneIsReturnedInGetWheels() {
+    public void checkListCloneIsReturnedInGetWheels() {
         Car car = new Car(1995, "Blue", List.of(new Wheel(90)), testEngine);
         car.getWheels().add(new Wheel(50));
         Assert.assertEquals("You shouldn't be able to change car's wheels with getWheel method",
                 1, car.getWheels().size());
+    }
+
+    @Test
+    public void checkDeepListCloneIsReturnedInGetWheels() {
+        int initialWheelRadius = 90;
+        Car car = new Car(1995, "Blue", List.of(new Wheel(initialWheelRadius)), testEngine);
+        int newRadius = 1;
+        car.getWheels().get(0).setRadius(newRadius);
+        Assert.assertEquals("You shouldn't be able to change car's wheels parameters with "
+                    + "getWheels method", initialWheelRadius, car.getWheels().get(0).getRadius());
     }
 }
