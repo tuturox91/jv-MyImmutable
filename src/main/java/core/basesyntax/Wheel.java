@@ -9,15 +9,6 @@ public class Wheel implements Cloneable {
         this.radius = radius;
     }
 
-    //implement this class
-
-    @Override
-    public String toString() {
-        return "Wheel{"
-            + "radius=" + radius
-            + '}';
-    }
-
     public void setRadius(int radius) {
         this.radius = radius;
     }
@@ -46,5 +37,12 @@ public class Wheel implements Cloneable {
     @Override
     public int hashCode() {
         return Objects.hash(radius);
+    }
+
+    @Override
+    public String toString() {
+        return "Wheel{"
+                + "radius=" + radius
+                + '}';
     }
 }

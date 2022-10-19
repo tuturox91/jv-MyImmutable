@@ -87,6 +87,4 @@ public final class Car {
                 && this.engine.equals(otherObj.engine)) return true;
         return  false;
     }
-
-
 }
