@@ -1,13 +1,9 @@
 package core.basesyntax;
 
-import javax.swing.text.Style;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-/**
- * Make this class immutable. See requirements in task description.
- */
 public final class Car {
     private final int year;
     private final String color;
